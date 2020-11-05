@@ -5,7 +5,8 @@ import {
     Swiper,
     SwiperSlide,
     Tabs,
-    Tab
+    Tab,
+    Range
 } from 'framework7-react';
 
 import QuestionItem from '../components/question/question'
@@ -19,6 +20,7 @@ import certificate from '../assets/certificate.jpg'
 import cap from '../assets/cap.jpg'
 import employee from '../assets/employee.jpg'
 import robot from '../assets/robot.jpg'
+import codebook1 from '../assets/codebook1.jpg'
 
 import '../css/questionpage.scss'
 
@@ -81,26 +83,58 @@ export default () => {
                         <p className="text-wrapper">
                             Why are you learning to code?
                      </p>
-                        <QuestionItem
-                            onClick={SetWidth}
-                            image={bag}
-                            text="High school student"
-                        />
-                        <QuestionItem
-                            onClick={SetWidth}
-                            image={cap}
-                            text="University student"
-                        />
-                        <QuestionItem
-                            onClick={SetWidth}
-                            image={employee}
-                            text="Employee"
-                        />
-                        <QuestionItem
-                            onClick={SetWidth}
-                            image={robot}
-                            text="Other"
-                        />
+                        <Link tabLink="#tab-3">
+
+                            <QuestionItem
+                                onClick={SetWidth}
+                                image={bag}
+                                text="High school student"
+                            />
+                        </Link>
+
+                        <Link tabLink="#tab-3">
+
+                            <QuestionItem
+                                onClick={SetWidth}
+                                image={cap}
+                                text="University student"
+                            />
+                        </Link>
+                        <Link tabLink="#tab-3">
+
+                            <QuestionItem
+                                onClick={SetWidth}
+                                image={employee}
+                                text="Employee"
+                            />
+                        </Link>
+                        <Link tabLink="#tab-3">
+
+                            <QuestionItem
+                                onClick={SetWidth}
+                                image={robot}
+                                text="Other"
+                            />
+                        </Link>
+                    </div>
+                </Tab>
+                <Tab id="tab-3" className="tab-3">
+                    <div className="tab3-wrapper">
+                        <p className="tab3-text">How much coding experience do you have?</p>
+
+                        <div className="tab3-image">
+                            <img src={codebook1} alt="books" />
+                        </div>
+
+                        <Range
+                            min={0}
+                            max={10}
+                            label={true}
+                            step={5}
+                            value={0}
+                            draggableBar={true}
+                        >
+                        </Range>
                     </div>
                 </Tab>
             </Tabs>

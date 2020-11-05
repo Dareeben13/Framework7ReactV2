@@ -15,4 +15,29 @@
         letter-spacing: 1px;
     }
 
+    .tab-3{
+
+    height: 90vh;
+    background-color: white;
+
+        .tab3-wrapper{
+            text-align: center;
+    
+            .tab3-text{
+                font-size: 2.3em;
+                color: #4e4d87;
+                font-weight: 700;
+                padding: 20px !important;
+            }
+    
+            .tab3-image > img{
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+            }
+    } 
+    
 }
+    
+}
+
