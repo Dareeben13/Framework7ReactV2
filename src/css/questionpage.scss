@@ -1,43 +1,77 @@
-*{
-    box-sizing: border-box !important;
+* {
+  box-sizing: border-box !important;
 }
 
-.question-container{
-    display: flex;
-    flex-direction: column;
+.question-container {
+  display: flex;
+  flex-direction: column;
 
-    .text-wrapper{
-        margin-top: 25px !important;
-        text-align: center !important;
-        font-size: 2em;
-        font-weight: 700;
-         color: #4e4d87;
-        letter-spacing: 1px;
-    }
+  .text-wrapper {
+    margin-top: 60px !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+    font-size: 2em;
+    font-weight: 700;
+    color: #4e4d87;
+    letter-spacing: 1px;
+  }
 
-    .tab-3{
-
+  .tab-3 {
     height: 90vh;
     background-color: white;
 
-        .tab3-wrapper{
-            text-align: center;
-    
-            .tab3-text{
-                font-size: 2.3em;
-                color: #4e4d87;
-                font-weight: 700;
-                padding: 20px !important;
-            }
-    
-            .tab3-image > img{
-                height: 300px;
-                width: 300px;
-                border-radius: 50%;
-            }
-    } 
-    
-}
-    
+    .tab3-wrapper {
+      text-align: center;
+
+      .link-container {
+        padding: 0px 18px !important;
+
+        .link {
+          height: 50px;
+          text-align: center !important;
+          margin: 8px 0 !important;
+          background-color: #31b965d0;
+          padding: 6px !important;
+          border-radius: 30px;
+          font-size: 18px;
+          letter-spacing: 1.3px;
+          color: white;
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+
+      .txt {
+        margin: 10px 0px !important;
+        font-size: 1.5em;
+        font-weight: 500 !important;
+        color: rgba(32, 32, 32, 0.664);
+      }
+
+      .tab3-text {
+        font-size: 2.3em;
+        color: #4e4d87;
+        font-weight: 700;
+        padding: 20px !important;
+      }
+
+      .tab3-image > img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+      }
+    }
+  }
 }
 
+.item-link {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.page-container {
+  background-color: white;
+}
