@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+.home{
+    // position: relative;
+    padding: 20px 20px;
+    background: #fff;
+    overflow: hidden;
+
+    .login{
+        text-align: right;
+        text-transform: uppercase;
+        font-size: 1.4em;
+       
+        font-weight: 600;
+        letter-spacing: 2px ;
+        padding: 6px 18px!important;
+        text-decoration: none!important;
+    }
+    .login__btn{
+        color: #0000006b!important;
+    }
+
+    .swiper{
+        margin-top: 0;
+        height: 80%;
+    }
+
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+    }
+
+    .swiper-pagination-bullet{
+        margin: 0 10px !important;
+    }
+
+    .button-container{
+         padding: 0px 18px !important;
+         
+
+        .button{
+            height: 50px;
+            text-align: center !important;
+            margin: 24px 0 !important;
+            background-color: #31b965d0;
+            padding: 6px !important;
+            border-radius: 30px;
+            font-size: 18px;
+            letter-spacing: 1.3px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+    }
+        
+       
+    
+}
