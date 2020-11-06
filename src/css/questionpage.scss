@@ -5,10 +5,11 @@
 .question-container {
   display: flex;
   flex-direction: column;
+  background-color: ghostwhite;
 
   .text-wrapper {
-    margin-top: 60px !important;
-    margin-bottom: 10px !important;
+    margin-top: 30px !important;
+    margin-bottom: 50px !important;
     text-align: center !important;
     font-size: 2em;
     font-weight: 700;
@@ -17,8 +18,8 @@
   }
 
   .tab-3 {
-    height: 90vh;
-    background-color: white;
+    // height: 90vh;
+    // background-color: white;
 
     .tab3-wrapper {
       text-align: center;
@@ -57,10 +58,78 @@
         padding: 20px !important;
       }
 
-      .tab3-image > img {
+      .code-level .tab3-image > img {
         height: 300px;
         width: 300px;
         border-radius: 50%;
+      }
+
+      .code-level #subtablinks {
+        position: relative;
+        margin: 0px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .custom-link-content{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .custom-link-text {
+            font-size: 1.7em;
+            color: #4e4d87;
+          }
+
+          .donut {
+            margin-top: 10px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: white;
+            border: 12px solid #4e4d87;
+          }
+
+          .blank {
+            margin-top: 15px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: #e0e0e6;
+          }
+
+          .filled {
+            margin-top: 15px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: #4e4d87;
+          }
+        }
+
+        .bar-container {
+          position: absolute;
+          height: 10px;
+          bottom: 12px;
+          left: 35px;
+          right: 35px;
+          background-color: #e0e0e6;
+
+          .filler {
+            height: 100%;
+            background-color: #4e4d87;
+            z-index: 1;
+          }
+        }
+      }
+
+      .code-level .code-level-text {
+        font-size: 1.7em;
+        color: #0000006b;
+        margin: 30px 0px;
+        padding: 0px 30px;
+        text-align: center;
       }
     }
   }

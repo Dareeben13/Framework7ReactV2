@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Page, Link, Tabs, Tab, Range } from "framework7-react";
+import { Page, Link, Tabs, Tab } from "framework7-react";
 
 import QuestionItem from "../components/question/question";
 import ProgressBar from "../components/progress-bar/progress-bar";
@@ -13,11 +13,14 @@ import cap from "../assets/cap.jpg";
 import employee from "../assets/employee.jpg";
 import robot from "../assets/robot.jpg";
 import codebook1 from "../assets/codebook1.jpg";
+import codebook2 from "../assets/codebook2.jpg";
+import codebook3 from "../assets/codebook3.jpg";
 
 import "../css/questionpage.scss";
 
 export default () => {
   const [width, setWidth] = useState(33.3);
+  const [currentSubTab, setCurrentSubTab] = useState(0);
 
   const divStyle = {
     width: "" + width + "%",
@@ -26,6 +29,23 @@ export default () => {
   const SetWidth = () => {
     setWidth(width + 33.3);
   };
+
+  const renderLevelText = () => {
+    const parent = document.getElementById("tab-3");
+
+    if (parent && parent.classList.contains("tab-active")) {
+      if (currentSubTab === 0) {
+        return "You're about to start your journey";
+      }
+      else if (currentSubTab === 50) {
+        return "You've written small programs or webpages";
+      }
+      else {
+        return "You've worked on larger projects"
+      }
+    }
+    return null;
+  }
 
   return (
     <Page name="question" className="question-container">
@@ -97,20 +117,49 @@ export default () => {
         <Tab id="tab-3" className="tab-3">
           <div className="tab3-wrapper">
             <p className="tab3-text">How much coding experience do you have?</p>
-
-            <div className="tab3-image">
-              <img src={codebook1} alt="books" />
+            <div className="code-level">
+              <Tabs>
+                <Tab id="subtab-1" className="" tabActive>
+                  <div className="tab3-image">
+                    <img src={codebook1} alt="books" />
+                  </div>
+                </Tab>
+                <Tab id="subtab-2" className="">
+                  <div className="tab3-image">
+                    <img src={codebook2} alt="books" />
+                  </div>
+                </Tab>
+                <Tab id="subtab-3" className="">
+                  <div className="tab3-image">
+                    <img src={codebook3} alt="books" />
+                  </div>
+                </Tab>
+              </Tabs>
+              <div id="subtablinks">
+                <Link tabLink="#subtab-1" tabLinkActive onClick={() => setCurrentSubTab(0)} style={{ zIndex: 2}}>
+                  <div className="custom-link-content">
+                    <p className="custom-link-text">None</p>
+                    <div className={currentSubTab === 0 ? "donut" : (currentSubTab > 0 ? "filled" : "blank")}></div>
+                  </div>
+                </Link>
+                <Link tabLink="#subtab-2" onClick={() => setCurrentSubTab(50)} style={{ zIndex: 2}}>
+                  <div className="custom-link-content">
+                    <p className="custom-link-text">A Little</p>
+                    <div className={currentSubTab === 50 ? "donut" : (currentSubTab > 50 ? "filled" : "blank")}></div>
+                  </div>
+                </Link>
+                <Link tabLink="#subtab-3" onClick={() => setCurrentSubTab(100)} style={{ zIndex: 2}}>
+                  <div className="custom-link-content">
+                    <p className="custom-link-text">A Lot</p>
+                    <div className={currentSubTab === 100 ? "donut" : (currentSubTab > 100 ? "filled" : "blank")}></div>
+                  </div>
+                </Link>
+                <div className="bar-container">
+                  <div className="filler" style={{ width: `calc(${currentSubTab}%)`}}></div>
+                </div>
+              </div>
+              <p className="code-level-text">{renderLevelText()}</p>
             </div>
-
-            {/* <Range
-              min={0}
-              max={10}
-              label={true}
-              step={5}
-              value={0}
-              draggableBar={true}
-            ></Range>
-            <p className="txt">You've written small programs or webpages</p> */}
             <div className="link-container">
               <Link className="link" href="/signup">
                 Continue
